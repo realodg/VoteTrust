@@ -9,14 +9,27 @@
 <body>
     <header class="navbar">
   <div class="logo"><img src="images/ChatGPT_Image_Jul_22__2025__04_40_51_PM-removebg-preview.png" alt="logo"></div>
-  <nav>
-    <ul class="nav-links">
+  <nav class="navbar">
+    <ul class="nav-links sidebar">
+      <li onclick="hideSidebar()">
+        <a href="#"><img src="images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close"></a>
+      </li>
       <li><a href="#Features">Features</a></li>
       <li><a href="#About">About</a></li>
       <li><a href="#Download">Download</a></li>
       <li><a href="#FAQ">FAQ</a></li>
-      <li><a href="#Contact Us">Contact</a></li>
-      
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+
+    <ul class="nav-links">
+      <li class="hideOnMobile"><a href="#Features">Features</a></li>
+      <li class="hideOnMobile"><a href="#About">About</a></li>
+      <li class="hideOnMobile"><a href="#Download">Download</a></li>
+      <li class="hideOnMobile"><a href="#FAQ">FAQ</a></li>
+      <li class="hideOnMobile"><a href="#Contact">Contact</a></li>
+      <li class="menu-btn" onclick="showSidebar()">
+        <a href="#"><img src="images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu"></a>
+      </li>
     </ul>
   </nav>
   <button class="cta-button">Get Started</button>
@@ -183,6 +196,17 @@
   </div>
 </footer>
 <button id="backToTop" title="Go to top">↑</button>
+
+<script>
+  function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex';
+  }
+  function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none';
+  }
+</script>
 
 <script>
   const backToTopButton = document.getElementById("backToTop");

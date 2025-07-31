@@ -1,10 +1,10 @@
 /* Reset and base styles */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s ease;
-}
+} */
 
 * {
   margin: 0;
@@ -29,12 +29,12 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .logo img {
-  height: 70px;
-  width: 50;
+  height: auto;
+  width: 50px;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(252, 249, 249, 0.2);
 }
@@ -59,7 +59,31 @@ body {
 .nav-links a.active {
   border-bottom: 2px solid #28a745;
 }
-
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f9fa23;
+  box-shadow: -10px 0 -10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 1000;
+}
+.sidebar li{
+  width: 100%;
+}
+.sidebar a{
+  width: 100%;
+}
+.menu-btn{
+  display: none;
+}
 
 .cta-button {
   background-color: #007BFF;
@@ -520,17 +544,15 @@ textarea:focus {
 }
 
 /* === Responsive Design (Media Queries) === */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 769px) {
+  .cta-button{
+    display: none;
   }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-btn{
+  display: block;
   }
 
   .footer-top {
@@ -552,5 +574,10 @@ textarea:focus {
   .faq,
   .contact {
     padding: 2rem 1rem;
+  }
+}
+@media(max-width:400px){
+  .sidebar{
+    width: 100%;
   }
 }
